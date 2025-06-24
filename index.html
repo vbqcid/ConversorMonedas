@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Monedas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        label, input, button, select { display: block; margin-bottom: 10px; width: 100%; padding: 8px; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { opacity: 0.9; }
+        #resultado { margin-top: 15px; font-weight: bold; color: #333; }
+        .error { color: red; }
+        
+        #girarBtn {
+            background-color: #007bff;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Monedas</h1>
+
+        <div class="error" id="api-key-warning" style="display:none;">
+            ¡ADVERTENCIA! Por favor, abre `script.js` y asegúrate de que `const API_KEY = 'tu_clave_real';` esté correcta.
+            Puedes obtener una clave gratis en: <a href="https://www.exchangerate-api.com/" target="_blank">ExchangeRate-API.com</a>
+        </div>
+
+        <div>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" value="1" min="0.01" step="0.01">
+        </div>
+        <div>
+            <label for="monedaOrigen">De:</label>
+            <select id="monedaOrigen">
+                <option value="">Cargando monedas...</option>
+            </select>
+        </div>
+        
+        <button id="girarBtn">⇅ Girar Conversión</button> 
+
+        <div>
+            <label for="monedaDestino">A:</label>
+            <select id="monedaDestino">
+                <option value="">Cargando monedas...</option>
+            </select>
+        </div>
+        <button id="convertirBtn">Convertir</button>
+        <div id="resultado"></div>
+        <div class="error" id="mensajeError"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
